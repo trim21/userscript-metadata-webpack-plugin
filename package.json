@@ -2,7 +2,7 @@
   "name": "userscript-metadata-webpack-plugin",
   "version": "0.0.2",
   "description": "A webpack plugin to generate userscript metadata and prepend to js",
-  "main": "src/srindex.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
