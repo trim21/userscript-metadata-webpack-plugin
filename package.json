@@ -1,6 +1,6 @@
 {
   "name": "userscript-metadata-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A webpack plugin to generate userscript metadata and prepend to js",
   "main": "src/srindex.js",
   "scripts": {
@@ -21,7 +21,5 @@
     "email": "trim21me@gmail.com"
   },
   "license": "MIT",
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }
