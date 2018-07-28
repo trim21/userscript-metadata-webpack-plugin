@@ -1,0 +1,28 @@
+{
+  "name": "userscript-metadata-webpack-plugin",
+  "version": "0.0.1",
+  "description": "A webpack plugin to generate userscript metadata and prepend to js",
+  "main": "src/srindex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "url": "https://github.com/Trim21/userscript-metadata-webpack-plugin",
+    "type": "git"
+  },
+  "keywords": [
+    "webpack",
+    "userscript",
+    "plugin",
+    "metadata"
+  ],
+  "author": {
+    "name": "Trim21",
+    "email": "trim21me@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.16.3",
+    "wrapper-webpack-plugin": "^2.0.0"
+  }
+}
