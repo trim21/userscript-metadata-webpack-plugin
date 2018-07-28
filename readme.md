@@ -14,6 +14,8 @@ npm i userscript-metadata-webpack-plugin -D
 
 ### configure
 
+`webpack.config.js`
+
 ```javascript
 const pkg = require('../package.json')
 const UserScriptMetaDataPlugin = require('userscript-metadata-webpack-plugin')
@@ -33,9 +35,6 @@ let metadata = {
     'https://code.jquery.com/jquery-3.3.1.min.js',
   ],
   'grant': [
-    'GM_addStyle',
-    'GM_openInTab',
-    'GM_addStyle',
     'GM_xmlhttpRequest',
   ],
   'connect': [
@@ -46,6 +45,8 @@ let metadata = {
 }
 
 const config = {
+  // ...
+  // ...
   plugins: [
     new UserScriptMetaDataPlugin({
       metadata
