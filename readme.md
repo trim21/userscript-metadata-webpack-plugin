@@ -20,10 +20,11 @@ const UserScriptMetaDataPlugin = require('userscript-metadata-webpack-plugin')
 
 let metadata = {
   'name': 'UserScript name' || pkg.name,
+  'name:zh': '用户脚本名',
   'namespace': pkg.repository.url,
   'version': pkg.version,
   'author': pkg.author, // could be a object { name , email } or string
-  'source': pkg['repository']['url'],
+  'source': pkg.repository.url,
   'license': pkg.license,
   'match': [
     'www.google.com'
@@ -53,4 +54,5 @@ const config = {
 }
 
 module.exports = config
+
 ```
