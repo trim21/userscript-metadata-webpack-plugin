@@ -79,7 +79,7 @@ class UserScriptMetaDataPlugin {
     const header = this.header
     const tester = { test: this.test }
 
-    compiler.hooks.compilation.tap('UserScriptMetaDataPlugin', (compilation) => {
+    compiler.hooks.make.tap('UserScriptMetaDataPlugin', (compilation) => {
       compilation.hooks.optimizeChunkAssets.tapAsync('UserScriptMetaDataPlugin', (chunks, done) => {
         wrapChunks(compilation, chunks)
         done()
