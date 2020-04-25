@@ -4,6 +4,7 @@
   "description": "A webpack plugin to generate userscript metadata and prepend to js",
   "main": "src/index.js",
   "scripts": {
+    "postversion": "git push --follow-tags",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,8 @@
     "email": "trim21me@gmail.com"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  }
 }
