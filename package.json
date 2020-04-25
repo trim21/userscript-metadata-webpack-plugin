@@ -21,5 +21,8 @@
     "email": "trim21me@gmail.com"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  }
 }
