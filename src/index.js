@@ -1,7 +1,8 @@
 const ConcatSource = require('webpack-sources').ConcatSource
 const ModuleFilenameHelpers = require('webpack/lib/ModuleFilenameHelpers')
+const Compilation = require("webpack/lib/Compilation");
 
-function parseAuthor (author) {
+function parseAuthor(author) {
   if (typeof author === 'string') return author
 
   let a = author['name']
@@ -20,7 +21,7 @@ function parseAuthor (author) {
  * @param {Object.<string, string|string[]|undefined|null>} metadata the metadata.
  * @return {string} the metadata block as a string.
  */
-function generateMetadataBlock (metadata) {
+function generateMetadataBlock(metadata) {
   let keys = Object.keys(metadata)
   var longest = keys.reduce(function (a, b) { return a.length > b.length ? a : b })
   let pad = longest.length
@@ -59,12 +60,12 @@ class UserScriptMetaDataPlugin {
    * @param {Object} options options
    * @param {Object} options.metadata metadata object
    */
-  constructor (options) {
+  constructor(options) {
     if (typeof options !== 'object') {
       throw new TypeError('Argument "options" must be an object.')
     }
     if (!options.hasOwnProperty('metadata')) {
-      throw  new TypeError('"Options" must have property "metadata"')
+      throw new TypeError('"Options" must have property "metadata"')
     }
 
     this.header = generateMetadataBlock(options.metadata)
@@ -75,36 +76,29 @@ class UserScriptMetaDataPlugin {
    *
    * @param {webpack.Compiler} compiler
    */
-  apply (compiler) {
+  apply(compiler) {
     const header = this.header
     const tester = { test: this.test }
 
-    compiler.hooks.make.tap('UserScriptMetaDataPlugin', (compilation) => {
-      compilation.hooks.optimizeChunkAssets.tapAsync('UserScriptMetaDataPlugin', (chunks, done) => {
-        wrapChunks(compilation, chunks)
-        done()
-      })
-    })
-
-    function wrapFile (compilation, fileName) {
-      compilation.assets[fileName] = new ConcatSource(
-        String(header),
-        compilation.assets[fileName],
-      )
-    }
-
-    function wrapChunks (compilation, chunks) {
-      chunks.forEach(chunk => {
-        const args = {
-          hash: compilation.hash
-        }
-        chunk.files.forEach(fileName => {
-          if (ModuleFilenameHelpers.matchObject(tester, fileName)) {
-            wrapFile(compilation, fileName, args)
-          }
+    compiler.hooks.compilation.tap('UserScriptMetaDataPlugin', (compilation) => {
+      compilation.hooks.processAssets.tap(
+        {
+          name: 'UserScriptMetaDataPlugin',
+          stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
+        },
+        () => {
+          compilation.chunks.forEach(chunk => {
+            chunk.files.forEach(file => {
+              if (ModuleFilenameHelpers.matchObject(tester, file)) {
+                compilation.updateAsset(
+                  file,
+                  old => new ConcatSource(String(header), "\n", old)
+                );
+              }
+            })
+          })
         })
-      })
-    }
+    })
   }
 }
 

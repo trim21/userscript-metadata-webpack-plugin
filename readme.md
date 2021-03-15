@@ -2,7 +2,7 @@
 
 `userscript-metadata-webpack-plugin` is a webpack plugin to generate `userscript metadata` and prepend to file which name matched `*.user.js`
 
-Only work with `webpack 4`
+when using `webpack 4`, install `userscript-metadata-webpack-plugin==0.0.6`
 
 ## usage
 
