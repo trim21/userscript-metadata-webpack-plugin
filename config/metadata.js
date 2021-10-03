@@ -21,8 +21,12 @@ module.exports = {
     'GM_xmlhttpRequest',
   ],
   connect: [
-    'bgm.tv',
-    'bangumi.tv',
+    'example.com',
+    'www.example.com',
   ],
+  'resource': {
+    A: 'https://resource.a',
+    BB: 'https://resource.b',
+  },
   'run-at': 'document-end',
 }

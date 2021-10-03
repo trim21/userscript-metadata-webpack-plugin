@@ -1,8 +1,12 @@
 const ConcatSource = require('webpack-sources').ConcatSource
 const ModuleFilenameHelpers = require('webpack/lib/ModuleFilenameHelpers')
-const Compilation = require("webpack/lib/Compilation");
+const Compilation = require('webpack/lib/Compilation')
 
-function parseAuthor(author) {
+function longestLength (a) {
+  return a.reduce(function (a, b) { return a.length > b.length ? a : b }).length
+}
+
+function parseAuthor (author) {
   if (typeof author === 'string') return author
 
   let a = author['name']
@@ -21,10 +25,8 @@ function parseAuthor(author) {
  * @param {Object.<string, string|string[]|undefined|null>} metadata the metadata.
  * @return {string} the metadata block as a string.
  */
-function generateMetadataBlock(metadata) {
-  let keys = Object.keys(metadata)
-  var longest = keys.reduce(function (a, b) { return a.length > b.length ? a : b })
-  let pad = longest.length
+function generateMetadataBlock (metadata) {
+  let pad = longestLength(Object.keys(metadata)) + 3
 
   let block = ''
   for (let key in metadata) {
@@ -38,11 +40,19 @@ function generateMetadataBlock(metadata) {
       }
 
       if (values) {
-        if (!Array.isArray(values)) {
-          values = [values]
-        }
-        for (let i = 0; i < values.length; i++) {
-          block += '// @' + key.padEnd(pad + 3) + values[i] + '\n'
+        if (typeof values === 'object' && !Array.isArray(values)) {
+          let subLongest = longestLength(Object.keys(values))
+
+          for (const [key, value] of Object.entries(values)) {
+            block += '// @' + key.padEnd(pad) + `${key.padEnd(subLongest)} ${value}` + '\n'
+          }
+        } else {
+          if (!Array.isArray(values)) {
+            values = [values]
+          }
+          for (let i = 0; i < values.length; i++) {
+            block += '// @' + key.padEnd(pad) + values[i] + '\n'
+          }
         }
       } else {
         block += '// @' + key + '\n'
@@ -60,7 +70,7 @@ class UserScriptMetaDataPlugin {
    * @param {Object} options options
    * @param {Object} options.metadata metadata object
    */
-  constructor(options) {
+  constructor (options) {
     if (typeof options !== 'object') {
       throw new TypeError('Argument "options" must be an object.')
     }
@@ -76,7 +86,7 @@ class UserScriptMetaDataPlugin {
    *
    * @param {webpack.Compiler} compiler
    */
-  apply(compiler) {
+  apply (compiler) {
     const header = this.header
     const tester = { test: this.test }
 
@@ -92,8 +102,8 @@ class UserScriptMetaDataPlugin {
               if (ModuleFilenameHelpers.matchObject(tester, file)) {
                 compilation.updateAsset(
                   file,
-                  old => new ConcatSource(String(header), "\n", old)
-                );
+                  old => new ConcatSource(String(header), '\n', old)
+                )
               }
             })
           })

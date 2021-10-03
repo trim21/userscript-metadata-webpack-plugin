@@ -1,6 +1,8 @@
 # userscript-metadata-webpack-plugin
 
-`userscript-metadata-webpack-plugin` is a webpack plugin to generate `userscript metadata` and prepend to file which name matched `*.user.js`
+`userscript-metadata-webpack-plugin` is a webpack plugin to
+generate `userscript metadata` and prepend to file which name
+matched `*.user.js`
 
 when using `webpack 4`, install `userscript-metadata-webpack-plugin==0.0.6`
 
@@ -21,28 +23,36 @@ const pkg = require('../package.json')
 const UserScriptMetaDataPlugin = require('userscript-metadata-webpack-plugin')
 
 let metadata = {
-  'name': 'UserScript name' || pkg.name,
-  'name:zh': '用户脚本名',
-  'namespace': pkg.repository.url,
-  'version': pkg.version,
-  'author': pkg.author, // could be a object { name , email } or string
-  'source': pkg.repository.url,
-  'license': pkg.license,
-  'match': [
-    'www.google.com'
+  name: pkg.name,
+  namespace: 'https://trim21.me/',
+  version: pkg.version,
+  author: pkg.author,
+  source: pkg.repository.url,
+  supportURL: pkg.repository.url + '/issues',
+  license: 'MIT',
+  match: [
+    'https://bgm.tv/subject/*/edit',
+    'https://bangumi.tv/subject/*/edit',
   ],
-  'require': [
-    'https://code.jquery.com/jquery-3.3.1.min.js',
+  require: [
+    `https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js`,
+    `https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js`,
+    `https://cdn.jsdelivr.net/npm/diff/dist/diff.min.js`,
   ],
-  'grant': [
+  grant: [
     'GM_xmlhttpRequest',
   ],
-  'connect': [
-    'localhost',
-    'www.google.com'
+  connect: [
+    'example.com',
+    'www.example.com',
   ],
-  'run-at': 'document-end'
+  'resource': {
+    A: 'https://resource.a',
+    BB: 'https://resource.b',
+  },
+  'run-at': 'document-end',
 }
+
 
 const config = {
   // ...
@@ -56,4 +66,29 @@ const config = {
 
 module.exports = config
 
+```
+
+```javascript
+// ==UserScript==
+// @name         userscript-metadata-webpack-plugin
+// @namespace    https://trim21.me/
+// @version      0.1.0
+// @author       Trim21 <trim21me@gmail.com>
+// @source       https://github.com/Trim21/userscript-metadata-webpack-plugin
+// @supportURL   https://github.com/Trim21/userscript-metadata-webpack-plugin/issues
+// @license      MIT
+// @match        https://bgm.tv/subject/*/edit
+// @match        https://bangumi.tv/subject/*/edit
+// @require      https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js
+// @require      https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js
+// @require      https://cdn.jsdelivr.net/npm/diff/dist/diff.min.js
+// @grant        GM_xmlhttpRequest
+// @connect      example.com
+// @connect      www.example.com
+// @A            A  https://resource.a
+// @BB           BB https://resource.b
+// @run-at       document-end
+// ==/UserScript==
+
+// other js code
 ```
