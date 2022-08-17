@@ -1,4 +1,4 @@
-const ConcatSource = require('webpack-sources').ConcatSource
+const { ConcatSource } = require('webpack-sources')
 const ModuleFilenameHelpers = require('webpack/lib/ModuleFilenameHelpers')
 const Compilation = require('webpack/lib/Compilation')
 
@@ -66,9 +66,10 @@ function generateMetadataBlock (metadata) {
 
 class UserScriptMetaDataPlugin {
   /**
-   * Prepend UserScript Metadata to `*.user.js` file
+   * Plugin to prepend UserScript Metadata.
    * @param {Object} options options
    * @param {Object} options.metadata metadata object
+   * @param {RegExp} options.test file pattern, default /\.user\.js$/
    */
   constructor (options) {
     if (typeof options !== 'object') {
@@ -79,7 +80,13 @@ class UserScriptMetaDataPlugin {
     }
 
     this.header = generateMetadataBlock(options.metadata)
-    this.test = /\.user\.js$/
+
+    const test = options.test ?? /\.user\.js$/
+    if (typeof test === 'string' || test instanceof String) {
+      this.test = new RegExp(test)
+    } else {
+      this.test = test
+    }
   }
 
   /**

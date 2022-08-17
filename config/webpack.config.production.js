@@ -17,9 +17,9 @@ const cfg = merge({}, webpackConfig, {
   plugins: [
     new UserScriptMetaDataPlugin({
       metadata,
+      test: '\.js$'
     }),
   ],
 })
-
 
 module.exports = cfg

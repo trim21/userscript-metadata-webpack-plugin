@@ -1,8 +1,7 @@
 # userscript-metadata-webpack-plugin
 
 `userscript-metadata-webpack-plugin` is a webpack plugin to
-generate `userscript metadata` and prepend to file which name
-matched `*.user.js`
+generate `userscript metadata` for UserScript.
 
 when using `webpack 4`, install `userscript-metadata-webpack-plugin==0.0.6`
 
@@ -26,7 +25,10 @@ let metadata = {
   name: pkg.name,
   namespace: 'https://trim21.me/',
   version: pkg.version,
-  author: pkg.author,
+  author: {
+    "name": "Trim21",
+    "email": "trim21me@gmail.com"
+  },
   source: pkg.repository.url,
   supportURL: pkg.repository.url + '/issues',
   license: 'MIT',
@@ -40,7 +42,7 @@ let metadata = {
     `https://cdn.jsdelivr.net/npm/diff/dist/diff.min.js`,
   ],
   grant: [
-    'GM_xmlhttpRequest',
+    'GM.xmlhttpRequest',
   ],
   connect: [
     'example.com',
@@ -53,13 +55,13 @@ let metadata = {
   'run-at': 'document-end',
 }
 
-
 const config = {
   // ...
   // ...
   plugins: [
     new UserScriptMetaDataPlugin({
-      metadata
+      metadata,
+      test: /\.user\.js$/, // optional, default /\.user\.js$/
     })
   ]
 }
@@ -82,7 +84,7 @@ module.exports = config
 // @require      https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js
 // @require      https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js
 // @require      https://cdn.jsdelivr.net/npm/diff/dist/diff.min.js
-// @grant        GM_xmlhttpRequest
+// @grant        GM.xmlhttpRequest
 // @connect      example.com
 // @connect      www.example.com
 // @A            A  https://resource.a
