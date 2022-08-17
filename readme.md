@@ -11,7 +11,7 @@ when using `webpack 4`, install `userscript-metadata-webpack-plugin==0.0.6`
 
 ## usage
 
-you can find a full webpack example in [webpack-userscript-template](https://github.com/Trim21/webpack-userscript-template)
+you can find a full template project in [webpack-userscript-template](https://github.com/Trim21/webpack-userscript-template)
 
 ### install
 
