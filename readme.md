@@ -3,11 +3,11 @@
 `userscript-metadata-webpack-plugin` is a webpack plugin to
 generate userscript metadata comments for UserScript.
 
-when using `webpack 4`, install `userscript-metadata-webpack-plugin==0.0.6`
-
 require:
 - webpack 5
 - nodejs >= 14
+
+when using `webpack 4`, install `userscript-metadata-webpack-plugin==0.0.6`
 
 ## usage
 
