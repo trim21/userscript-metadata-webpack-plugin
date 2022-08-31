@@ -30,8 +30,10 @@
     "webpack-merge": "^5.7.3",
     "webpack-sources": "^3.2.3"
   },
+  "dependencies": {
+    "webpack-sources": "^3.2.0"
+  },
   "peerDependencies": {
-    "webpack-sources": "^3.2.3",
     "webpack": "^5.0.0"
   }
 }
