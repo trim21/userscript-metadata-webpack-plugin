@@ -1,19 +1,19 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require("path");
+const webpack = require("webpack");
 
 const webpackConfig = {
   resolve: {
-    extensions: ['.js', '.ts'],
+    extensions: [".js", ".ts"],
   },
   optimization: {
     minimize: false,
-    moduleIds: 'deterministic',
+    moduleIds: "deterministic",
   },
-  entry: './src/js/index.js',
+  entry: "./src/js/index.js",
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, "../dist"),
     filename: `example.user.js`,
   },
-}
+};
 
-module.exports = webpackConfig
+module.exports = webpackConfig;

@@ -4,6 +4,7 @@
 generate userscript metadata comments for UserScript.
 
 require:
+
 - webpack 5
 - nodejs >= 14
 
@@ -24,42 +25,34 @@ npm i userscript-metadata-webpack-plugin -D
 `webpack.config.js`
 
 ```javascript
-const pkg = require('../package.json')
-const UserScriptMetaDataPlugin = require('userscript-metadata-webpack-plugin')
+const pkg = require("../package.json");
+const UserScriptMetaDataPlugin = require("userscript-metadata-webpack-plugin");
 
 let metadata = {
   name: pkg.name,
-  namespace: 'https://trim21.me/',
+  namespace: "https://trim21.me/",
   version: pkg.version,
   author: {
-    "name": "Trim21",
-    "email": "trim21me@gmail.com"
+    name: "Trim21",
+    email: "trim21me@gmail.com",
   },
   source: pkg.repository.url,
-  supportURL: pkg.repository.url + '/issues',
-  license: 'MIT',
-  match: [
-    'https://bgm.tv/subject/*/edit',
-    'https://bangumi.tv/subject/*/edit',
-  ],
+  supportURL: pkg.repository.url + "/issues",
+  license: "MIT",
+  match: ["https://bgm.tv/subject/*/edit", "https://bangumi.tv/subject/*/edit"],
   require: [
     `https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js`,
     `https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js`,
     `https://cdn.jsdelivr.net/npm/diff/dist/diff.min.js`,
   ],
-  grant: [
-    'GM.xmlhttpRequest',
-  ],
-  connect: [
-    'example.com',
-    'www.example.com',
-  ],
-  'resource': {
-    A: 'https://resource.a',
-    BB: 'https://resource.b',
+  grant: ["GM.xmlhttpRequest"],
+  connect: ["example.com", "www.example.com"],
+  resource: {
+    A: "https://resource.a",
+    BB: "https://resource.b",
   },
-  'run-at': 'document-end',
-}
+  "run-at": "document-end",
+};
 
 const config = {
   // ...
@@ -68,12 +61,11 @@ const config = {
     new UserScriptMetaDataPlugin({
       metadata,
       test: /\.user\.js$/, // optional, default /\.user\.js$/
-    })
-  ]
-}
+    }),
+  ],
+};
 
-module.exports = config
-
+module.exports = config;
 ```
 
 ```javascript
