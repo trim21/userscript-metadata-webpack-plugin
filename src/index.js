@@ -25,7 +25,7 @@ function parseAuthor(author) {
 
 /**
  * Generate the user
- * @param {Object.<string, string|string[]|undefined|null>} metadata the metadata.
+ * @param {Object.<string, string|string[]|undefined|null|Object>} metadata the metadata.
  * @return {string} the metadata block as a string.
  */
 function generateMetadataBlock(metadata) {
@@ -34,13 +34,17 @@ function generateMetadataBlock(metadata) {
   let block = "";
   for (let key in metadata) {
     if (metadata.hasOwnProperty(key)) {
-      let values;
+      let value = metadata[key];
 
-      if (key !== "author") {
-        values = metadata[key];
-      } else {
-        values = parseAuthor(metadata[key]);
+      if (key === "author") {
+        if (value === undefined || value === null) {
+          continue;
+        }
+
+        value = parseAuthor(value);
       }
+
+      let values = value;
 
       if (values) {
         if (typeof values === "object" && !Array.isArray(values)) {
@@ -66,7 +70,7 @@ function generateMetadataBlock(metadata) {
       }
     }
   }
-  return "// ==UserScript==\n" + block + "// ==/UserScript==\n\n";
+  return "// ==UserScript==\n" + block + "// ==/UserScript==";
 }
 
 class UserScriptMetaDataPlugin {
@@ -84,7 +88,7 @@ class UserScriptMetaDataPlugin {
       throw new TypeError('"Options" must have property "metadata"');
     }
 
-    this.header = generateMetadataBlock(options.metadata);
+    this.header = generateMetadataBlock(options.metadata) + "\n\n";
 
     const test = options.test ?? /\.user\.js$/;
     if (typeof test === "string" || test instanceof String) {
@@ -129,3 +133,5 @@ class UserScriptMetaDataPlugin {
 }
 
 module.exports = UserScriptMetaDataPlugin;
+
+module.exports.generateMetadataBlock = generateMetadataBlock;

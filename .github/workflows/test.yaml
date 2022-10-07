@@ -5,8 +5,6 @@ on:
     branches-ignore:
       - gh-pages
       - "renovate/**"
-    tags:
-      - "v*"
   pull_request:
 
 jobs:
@@ -22,13 +20,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
-      - uses: actions/cache@v3
-        with:
-          path: ./node_modules
-          key: node-1-${{ matrix.node-version }}-${{ hashFiles('yarn.lock') }}
+          cache: yarn
 
       - run: yarn
-        if: steps.cache-primes.outputs.cache-hit != 'true'
+
+      - run: yarn test
 
       - run: yarn build
