@@ -85,8 +85,8 @@ module.exports = config;
 // @grant        GM.xmlhttpRequest
 // @connect      example.com
 // @connect      www.example.com
-// @A            A  https://resource.a
-// @BB           BB https://resource.b
+// @resource     A  https://resource.a
+// @resource     BB https://resource.b
 // @run-at       document-end
 // ==/UserScript==
 
