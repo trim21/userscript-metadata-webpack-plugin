@@ -23,6 +23,24 @@ describe("generate metadata block", function () {
     );
   });
 
+  test("object value", function () {
+    expect(
+      generateMetadataBlock({
+        resource: {
+          A: "https://resource.a",
+          BB: "https://resource.b",
+        },
+      })
+    ).toBe(
+      [
+        "// ==UserScript==",
+        "// @resource   A  https://resource.a",
+        "// @resource   BB https://resource.b",
+        "// ==/UserScript==",
+      ].join("\n")
+    );
+  });
+
   test("auth only name", function () {
     expect(generateMetadataBlock({ author: { name: "trim21" } })).toBe(
       ["// ==UserScript==", "// @author   trim21", "// ==/UserScript=="].join(

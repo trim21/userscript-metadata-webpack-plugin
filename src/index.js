@@ -50,11 +50,11 @@ function generateMetadataBlock(metadata) {
         if (typeof values === "object" && !Array.isArray(values)) {
           let subLongest = longestLength(Object.keys(values));
 
-          for (const [key, value] of Object.entries(values)) {
+          for (const [itemKey, itemValue] of Object.entries(values)) {
             block +=
               "// @" +
               key.padEnd(pad) +
-              `${key.padEnd(subLongest)} ${value}` +
+              `${itemKey.padEnd(subLongest)} ${itemValue}` +
               "\n";
           }
         } else {
