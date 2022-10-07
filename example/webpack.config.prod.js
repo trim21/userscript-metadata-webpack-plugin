@@ -1,25 +1,27 @@
-const { merge } = require("webpack-merge");
 const path = require("path");
 const UserScriptMetaDataPlugin = require("../");
 
 const metadata = require("./metadata");
-const webpackConfig = require("./webpack.config.base");
 
-const cfg = merge({}, webpackConfig, {
+module.exports = {
   mode: "production",
-  output: {
-    filename: metadata.name + ".prod.user.js",
+  resolve: {
+    extensions: [".js", ".ts"],
   },
-  entry: "./config/empty.js",
+  optimization: {
+    minimize: false,
+    moduleIds: "deterministic",
+  },
   output: {
     path: path.resolve(__dirname, "../dist"),
+    filename: `example.user.js`,
   },
+  devtool: "inline-source-map",
+  entry: path.join(__dirname, "./src/main.js"),
   plugins: [
     new UserScriptMetaDataPlugin({
       metadata,
       test: ".js$",
     }),
   ],
-});
-
-module.exports = cfg;
+};
