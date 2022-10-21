@@ -148,6 +148,20 @@
   resolved "https://registry.npmmirror.com/@types/semver/-/semver-7.3.12.tgz#920447fdd78d76b19de0438b7f60df3c4a80bf1c"
   integrity sha512-WwA1MW0++RfXmCr12xeYOOC5baSC9mSb0ZqCquFzKhcoF4TvHu5MKOuXsncgZcpVFhB1pXd5hZmM0ryAoCp12A==
 
+"@types/source-list-map@*":
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/@types/source-list-map/-/source-list-map-0.1.2.tgz#0078836063ffaf17412349bba364087e0ac02ec9"
+  integrity sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==
+
+"@types/webpack-sources@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.npmjs.org/@types/webpack-sources/-/webpack-sources-3.2.0.tgz#16d759ba096c289034b26553d2df1bf45248d38b"
+  integrity sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==
+  dependencies:
+    "@types/node" "*"
+    "@types/source-list-map" "*"
+    source-map "^0.7.3"
+
 "@typescript-eslint/eslint-plugin@^5.40.1":
   version "5.40.1"
   resolved "https://registry.npmmirror.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.40.1.tgz#3203a6ff396b1194083faaa6e5110c401201d7d5"
@@ -1792,6 +1806,11 @@ source-map@^0.6.0:
   resolved "https://registry.npmmirror.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
+source-map@^0.7.3:
+  version "0.7.4"
+  resolved "https://registry.npmjs.org/source-map/-/source-map-0.7.4.tgz#a9bbe705c9d8846f4e08ff6765acf0f1b0898656"
+  integrity sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==
+
 string.prototype.trimend@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmmirror.com/string.prototype.trimend/-/string.prototype.trimend-1.0.5.tgz#914a65baaab25fbdd4ee291ca7dde57e869cb8d0"
@@ -1948,10 +1967,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-userscript-metadata-generator@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/userscript-metadata-generator/-/userscript-metadata-generator-0.0.5.tgz#a267d6bdb5ae0d256986f713c417d7e0ff7c7003"
-  integrity sha512-EWWFSnq1yiKw1Qw9ASOvvKPnwKlEt5HfJ0+Sb26CuZC5wGS7+bNDKwCKr221Fzq0GUsk5BOpWf3190GcS3cmng==
+userscript-metadata-generator@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/userscript-metadata-generator/-/userscript-metadata-generator-0.0.6.tgz#2c3974430a7c599376f77e892eb1606a111e3fe0"
+  integrity sha512-B9yPtItkljTACnhagvVieiqFAVvsFBWQDfzhjCSA7CDGaSfRbuBHeAug0e6eLDGTHtX9kHkhl425M+Mi1cDWwg==
 
 watchpack@^2.4.0:
   version "2.4.0"

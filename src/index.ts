@@ -1,6 +1,6 @@
-import { ConcatSource } from 'webpack-sources';
-import * as ModuleFilenameHelpers from 'webpack/lib/ModuleFilenameHelpers';
-import * as Compilation from 'webpack/lib/Compilation';
+import type { Compiler } from 'webpack';
+import { ModuleFilenameHelpers, Compilation } from 'webpack';
+import { ConcatSource, Source } from 'webpack-sources';
 import generateMetadataBlock from 'userscript-metadata-generator';
 
 export default class UserScriptMetaDataPlugin {
@@ -18,16 +18,16 @@ export default class UserScriptMetaDataPlugin {
     }
 
     this.header = generateMetadataBlock(metadata) + '\n\n';
+    console.log(this.header);
 
-    if (typeof test === 'string' || test instanceof String) {
+    if (typeof test === 'string') {
       this.test = new RegExp(test);
     } else {
       this.test = test;
     }
   }
 
-  apply(compiler) {
-    const header = this.header;
+  apply(compiler: Compiler) {
     const tester = { test: this.test };
 
     compiler.hooks.compilation.tap('UserScriptMetaDataPlugin', (compilation) => {
@@ -40,7 +40,8 @@ export default class UserScriptMetaDataPlugin {
           compilation.chunks.forEach((chunk) => {
             chunk.files.forEach((file) => {
               if (ModuleFilenameHelpers.matchObject(tester, file)) {
-                compilation.updateAsset(file, (old) => new ConcatSource(String(header), '\n', old));
+                // @ts-ignore
+                compilation.updateAsset(file, (old: Source) => new ConcatSource(this.header, old));
               }
             });
           });
