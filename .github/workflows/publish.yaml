@@ -1,7 +1,7 @@
 name: publish
 
 on:
-  create:
+  push:
     tags:
       - 'v*'
 
