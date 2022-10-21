@@ -25,7 +25,7 @@
   },
   "scripts": {
     "format": "prettier -w ./",
-    "prepublishOnly": "tsc  --declaration false && tsc --outdir dist/esm --module es2020",
+    "prepublishOnly": "tsc  --declaration false && tsc --outdir dist/esm --module es2020 --allowJs false",
     "build": "webpack -c example/webpack.config.prod.js",
     "test": "jest"
   },
