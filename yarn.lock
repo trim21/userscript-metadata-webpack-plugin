@@ -1948,6 +1948,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+userscript-metadata-generator@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/userscript-metadata-generator/-/userscript-metadata-generator-0.0.5.tgz#a267d6bdb5ae0d256986f713c417d7e0ff7c7003"
+  integrity sha512-EWWFSnq1yiKw1Qw9ASOvvKPnwKlEt5HfJ0+Sb26CuZC5wGS7+bNDKwCKr221Fzq0GUsk5BOpWf3190GcS3cmng==
+
 watchpack@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmmirror.com/watchpack/-/watchpack-2.4.0.tgz#fa33032374962c78113f93c7f2fb4c54c9862a5d"
