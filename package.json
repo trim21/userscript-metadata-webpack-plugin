@@ -10,6 +10,10 @@
     },
     "./*": "./"
   },
+  "files": [
+    "./dist/",
+    "package.json"
+  ],
   "prettier": {
     "printWidth": 120,
     "useTabs": false,
