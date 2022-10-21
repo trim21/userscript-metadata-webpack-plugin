@@ -1,6 +1,6 @@
 const path = require('path');
 
-const UserScriptMetaDataPlugin = require('../src/cjs_shim.cjs');
+const UserScriptMetaDataPlugin = require('../dist/cjs/shim.cjs');
 
 const metadata = require('./metadata');
 

@@ -6,9 +6,7 @@ generate userscript metadata comments for UserScript.
 require:
 
 - webpack 5
-- nodejs >= 14
-
-when using `webpack 4`, install `userscript-metadata-webpack-plugin==0.0.6`
+- nodejs >= 16
 
 ## usage
 
@@ -28,38 +26,13 @@ npm i userscript-metadata-webpack-plugin -D
 const pkg = require('../package.json');
 const UserScriptMetaDataPlugin = require('userscript-metadata-webpack-plugin');
 
-let metadata = {
-  name: pkg.name,
-  namespace: 'https://trim21.me/',
-  version: pkg.version,
-  author: {
-    name: 'Trim21',
-    email: 'trim21me@gmail.com',
-  },
-  source: pkg.repository.url,
-  supportURL: pkg.repository.url + '/issues',
-  license: 'MIT',
-  match: ['https://bgm.tv/subject/*/edit', 'https://bangumi.tv/subject/*/edit'],
-  require: [
-    `https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js`,
-    `https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js`,
-    `https://cdn.jsdelivr.net/npm/diff/dist/diff.min.js`,
-  ],
-  grant: ['GM.xmlhttpRequest'],
-  connect: ['example.com', 'www.example.com'],
-  resource: {
-    A: 'https://resource.a',
-    BB: 'https://resource.b',
-  },
-  'run-at': 'document-end',
-};
 
 const config = {
   // ...
   // ...
   plugins: [
     new UserScriptMetaDataPlugin({
-      metadata,
+      metadata: {...},
       test: /\.user\.js$/, // optional, default /\.user\.js$/
     }),
   ],
@@ -68,27 +41,4 @@ const config = {
 module.exports = config;
 ```
 
-```javascript
-// ==UserScript==
-// @name         userscript-metadata-webpack-plugin
-// @namespace    https://trim21.me/
-// @version      0.1.0
-// @author       Trim21 <trim21me@gmail.com>
-// @source       https://github.com/Trim21/userscript-metadata-webpack-plugin
-// @supportURL   https://github.com/Trim21/userscript-metadata-webpack-plugin/issues
-// @license      MIT
-// @match        https://bgm.tv/subject/*/edit
-// @match        https://bangumi.tv/subject/*/edit
-// @require      https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js
-// @require      https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js
-// @require      https://cdn.jsdelivr.net/npm/diff/dist/diff.min.js
-// @grant        GM.xmlhttpRequest
-// @connect      example.com
-// @connect      www.example.com
-// @resource     A  https://resource.a
-// @resource     BB https://resource.b
-// @run-at       document-end
-// ==/UserScript==
-
-// other js code
-```
+you can see more details about metadata here <https://github.com/trim21/userscript-metadata-generator>
