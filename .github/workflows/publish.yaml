@@ -3,7 +3,7 @@ name: publish
 on:
   create:
     tags:
-      - "v*"
+      - 'v*'
 
 jobs:
   main:

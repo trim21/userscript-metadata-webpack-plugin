@@ -1,27 +1,28 @@
-const path = require("path");
-const UserScriptMetaDataPlugin = require("../");
+const path = require('path');
 
-const metadata = require("./metadata");
+const UserScriptMetaDataPlugin = require('../src/cjs_shim.cjs');
+
+const metadata = require('./metadata');
 
 module.exports = {
-  mode: "production",
+  mode: 'production',
   resolve: {
-    extensions: [".js", ".ts"],
+    extensions: ['.js', '.ts'],
   },
   optimization: {
     minimize: false,
-    moduleIds: "deterministic",
+    moduleIds: 'deterministic',
   },
   output: {
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve(__dirname, '../dist'),
     filename: `example.user.js`,
   },
-  devtool: "inline-source-map",
-  entry: path.join(__dirname, "./src/main.js"),
+  devtool: 'inline-source-map',
+  entry: path.join(__dirname, './src/main.js'),
   plugins: [
     new UserScriptMetaDataPlugin({
       metadata,
-      test: ".js$",
+      test: '.js$',
     }),
   ],
 };
