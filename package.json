@@ -3,13 +3,8 @@
   "version": "0.2.5",
   "description": "A webpack plugin to generate userscript metadata and prepend to js",
   "types": "./dist/esm/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./src/shim.cjs"
-    },
-    "./*": "./"
-  },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.mjs",
   "files": [
     "./dist/",
     "./src/",
@@ -28,8 +23,8 @@
     "format": "prettier -w ./",
     "prepublishOnly": "npm run build",
     "prebuild": "rimraf dist",
-    "build": "tsc --declaration false && tsc --outdir dist/esm --module es2022 --allowJs false",
-    "test": "npx tsc && webpack -c example/webpack.config.prod.js"
+    "build": "rollup -c",
+    "test": "yarn build && webpack -c example/webpack.config.prod.js"
   },
   "repository": {
     "url": "https://github.com/Trim21/userscript-metadata-webpack-plugin",
@@ -59,12 +54,14 @@
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-standard": "5.0.0",
     "prettier": "^2.7.1",
+    "rollup": "^3.2.3",
+    "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^4.8.4",
     "webpack": "^5.26.0",
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "userscript-metadata-generator": "^0.0.6",
+    "userscript-metadata-generator": "file:../userscript-metadata-generator",
     "webpack-sources": "^3.2.0"
   },
   "peerDependencies": {
