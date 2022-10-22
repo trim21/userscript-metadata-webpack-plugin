@@ -1,8 +1,9 @@
-import typescript from 'rollup-plugin-typescript2';
-import externals from 'rollup-plugin-node-externals';
-import pkg from './package.json' assert { type: 'json' };
+const typescript = require('rollup-plugin-typescript2');
+const { externals } = require('rollup-plugin-node-externals');
 
-export default {
+const pkg = require('./package.json');
+
+module.exports = {
   input: './src/index.ts',
   plugins: [
     externals(),
