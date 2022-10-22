@@ -6,12 +6,13 @@
   "exports": {
     ".": {
       "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/shim.cjs"
+      "require": "./src/shim.cjs"
     },
     "./*": "./"
   },
   "files": [
     "./dist/",
+    "./src/",
     "package.json"
   ],
   "prettier": {
@@ -25,9 +26,10 @@
   },
   "scripts": {
     "format": "prettier -w ./",
-    "prepublishOnly": "tsc  --declaration false && tsc --outdir dist/esm --module es2020 --allowJs false",
-    "build": "webpack -c example/webpack.config.prod.js",
-    "test": "jest"
+    "prepublishOnly": "npm run build",
+    "prebuild": "rimraf dist",
+    "build": "tsc --declaration false && tsc --outdir dist/esm --module es2022 --allowJs false",
+    "test": "npx tsc && webpack -c example/webpack.config.prod.js"
   },
   "repository": {
     "url": "https://github.com/Trim21/userscript-metadata-webpack-plugin",

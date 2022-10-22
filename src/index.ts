@@ -13,7 +13,7 @@ export default class UserScriptMetaDataPlugin {
    * @param test file pattern, default `/\.user\.js$/`
    */
   constructor({ metadata, test = /\.user\.js$/ }: { metadata: {}; test: string | RegExp | undefined }) {
-    if (metadata == undefined) {
+    if (metadata === undefined) {
       throw new TypeError('Must pass "metadata"');
     }
 
