@@ -18,7 +18,6 @@ export default class UserScriptMetaDataPlugin {
     }
 
     this.header = generateMetadataBlock(metadata) + '\n\n';
-    console.log(this.header);
 
     if (typeof test === 'string') {
       this.test = new RegExp(test);
