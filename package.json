@@ -24,7 +24,14 @@
     "prepublishOnly": "npm run build",
     "prebuild": "rimraf dist",
     "build": "rollup -c",
-    "test": "yarn build && webpack -c example/webpack.config.prod.js"
+    "test": "yarn build && webpack -c example/webpack.config.prod.js",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": [
+      "prettier --ignore-path ./.prettierignore --write "
+    ]
   },
   "repository": {
     "url": "https://github.com/Trim21/userscript-metadata-webpack-plugin",
@@ -53,6 +60,8 @@
     "eslint-plugin-n": "15.3.0",
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-standard": "5.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "rollup": "^3.2.3",
     "rollup-plugin-node-externals": "^5.0.1",
