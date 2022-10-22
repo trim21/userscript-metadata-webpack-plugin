@@ -2,6 +2,9 @@ import type { Compiler } from 'webpack';
 import { ModuleFilenameHelpers, Compilation } from 'webpack';
 import { ConcatSource, Source } from 'webpack-sources';
 import generateMetadataBlock from 'userscript-metadata-generator';
+import type { Metadata } from 'userscript-metadata-generator';
+
+export type { Metadata } from 'userscript-metadata-generator';
 
 export default class UserScriptMetaDataPlugin {
   private readonly header: string;
@@ -12,7 +15,7 @@ export default class UserScriptMetaDataPlugin {
    * @param metadata metadata object, required
    * @param test file pattern, default `/\.user\.js$/`
    */
-  constructor({ metadata, test = /\.user\.js$/ }: { metadata: {}; test: string | RegExp | undefined }) {
+  constructor({ metadata, test = /\.user\.js$/ }: { metadata: Metadata; test: string | RegExp | undefined }) {
     if (metadata === undefined) {
       throw new TypeError('Must pass "metadata"');
     }

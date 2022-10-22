@@ -62,7 +62,7 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "userscript-metadata-generator": "^0.0.8",
+    "userscript-metadata-generator": "^0.0.9",
     "webpack-sources": "^3.2.0"
   },
   "peerDependencies": {
