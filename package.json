@@ -1,6 +1,6 @@
 {
   "name": "userscript-metadata-webpack-plugin",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "A webpack plugin to generate userscript metadata and prepend to js",
   "types": "./dist/esm/index.d.ts",
   "main": "./dist/cjs/index.cjs",
