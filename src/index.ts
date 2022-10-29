@@ -1,6 +1,5 @@
 import type { Compiler } from 'webpack';
-import { ModuleFilenameHelpers, Compilation } from 'webpack';
-import { ConcatSource, Source } from 'webpack-sources';
+import { ModuleFilenameHelpers, Compilation, sources } from 'webpack';
 import generateMetadataBlock from 'userscript-metadata-generator';
 import type { Metadata } from 'userscript-metadata-generator';
 
@@ -42,8 +41,7 @@ export default class UserScriptMetaDataPlugin {
           compilation.chunks.forEach((chunk) => {
             chunk.files.forEach((file) => {
               if (ModuleFilenameHelpers.matchObject(tester, file)) {
-                // @ts-ignore
-                compilation.updateAsset(file, (old: Source) => new ConcatSource(this.header, old));
+                compilation.updateAsset(file, (old) => new sources.ConcatSource(this.header, old));
               }
             });
           });
