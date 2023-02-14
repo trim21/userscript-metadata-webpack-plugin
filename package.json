@@ -26,6 +26,7 @@
     "build": "rollup -c",
     "test": "yarn build && webpack -c example/webpack.config.prod.js",
     "prepare": "husky install",
+    "lint": "eslint --ext ts ./",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
@@ -50,8 +51,8 @@
   "license": "MIT",
   "devDependencies": {
     "@types/webpack-sources": "^3.2.0",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
     "eslint": "8.34.0",
     "eslint-config-standard": "17.0.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
