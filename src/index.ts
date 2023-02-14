@@ -28,7 +28,7 @@ export default class UserScriptMetaDataPlugin {
     }
   }
 
-  apply(compiler: Compiler) {
+  apply(compiler: Compiler): void {
     const tester = { test: this.test };
 
     compiler.hooks.compilation.tap('UserScriptMetaDataPlugin', (compilation) => {

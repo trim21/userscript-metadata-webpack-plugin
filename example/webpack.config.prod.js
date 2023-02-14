@@ -1,7 +1,6 @@
 const path = require('path');
 
 const UserScriptMetaDataPlugin = require('../');
-
 const metadata = require('./metadata');
 
 module.exports = {
@@ -15,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: `example.user.js`,
+    filename: 'example.user.js',
   },
   devtool: 'inline-source-map',
   entry: path.join(__dirname, './src/main.js'),
