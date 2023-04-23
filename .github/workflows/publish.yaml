@@ -17,6 +17,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: yarn
 
+      - run: corepack enable
+      - run: corepack prepare
+
       - run: yarn
 
       - run: npm publish --access public
