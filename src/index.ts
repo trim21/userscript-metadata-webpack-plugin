@@ -1,6 +1,6 @@
 import type { Compiler } from 'webpack';
 import { ModuleFilenameHelpers, Compilation, sources } from 'webpack';
-import generateMetadataBlock from 'userscript-metadata-generator';
+import { generate as generateMetadataBlock } from 'userscript-metadata-generator';
 import type { Metadata } from 'userscript-metadata-generator';
 
 export type { Metadata } from 'userscript-metadata-generator';
