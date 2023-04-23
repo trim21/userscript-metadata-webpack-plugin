@@ -10,6 +10,14 @@
     "./src/",
     "package.json"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/esm/index.d.ts",
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/esm/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
   "prettier": {
     "printWidth": 120,
     "useTabs": false,
@@ -72,7 +80,7 @@
     "webpack-cli": "^5.0.2"
   },
   "dependencies": {
-    "userscript-metadata-generator": "^0.2.2"
+    "userscript-metadata-generator": "^0.2.3"
   },
   "peerDependencies": {
     "webpack": "^5.0.0"

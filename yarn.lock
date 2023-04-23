@@ -3975,10 +3975,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"userscript-metadata-generator@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "userscript-metadata-generator@npm:0.2.2"
-  checksum: 15e42375573853d4f03d9be5745fcb0bec94c112765c5b8eef5eb9851de34caf240445150d05f440a9346404b6b7da2948ab22c15a2f0fc4c753805cc617288b
+"userscript-metadata-generator@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "userscript-metadata-generator@npm:0.2.3"
+  checksum: 786df56c53341596a4619a6bbcb290be3c16dd300b7eae803a75244dcf352317497cadc9c046650978530b3d72153fdf2c824b2bb10d66546c28f0742df1b2c6
   languageName: node
   linkType: hard
 
@@ -4003,7 +4003,7 @@ __metadata:
     rollup-plugin-node-externals: ^5.1.2
     rollup-plugin-typescript2: ^0.34.1
     typescript: ^5.0.4
-    userscript-metadata-generator: ^0.2.2
+    userscript-metadata-generator: ^0.2.3
     webpack: ^5.27.0
     webpack-cli: ^5.0.2
   peerDependencies:

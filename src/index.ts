@@ -1,11 +1,11 @@
 import type { Compiler } from 'webpack';
 import { ModuleFilenameHelpers, Compilation, sources } from 'webpack';
-import { generate as generateMetadataBlock } from 'userscript-metadata-generator';
+import { userscriptMetadataGenerator } from 'userscript-metadata-generator';
 import type { Metadata } from 'userscript-metadata-generator';
 
 export type { Metadata } from 'userscript-metadata-generator';
 
-export default class UserScriptMetaDataPlugin {
+export class UserScriptMetaDataPlugin {
   private readonly header: string;
   private readonly test: RegExp;
 
@@ -19,7 +19,7 @@ export default class UserScriptMetaDataPlugin {
       throw new TypeError('Must pass "metadata"');
     }
 
-    this.header = generateMetadataBlock(metadata) + '\n\n';
+    this.header = userscriptMetadataGenerator(metadata) + '\n\n';
 
     if (typeof test === 'string') {
       this.test = new RegExp(test);

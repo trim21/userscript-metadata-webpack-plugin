@@ -24,7 +24,7 @@ npm i userscript-metadata-webpack-plugin -D
 
 ```javascript
 const pkg = require('../package.json');
-const UserScriptMetaDataPlugin = require('userscript-metadata-webpack-plugin');
+const {UserScriptMetaDataPlugin} = require('userscript-metadata-webpack-plugin');
 
 
 const config = {
