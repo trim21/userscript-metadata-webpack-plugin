@@ -22,9 +22,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
 
-      - run: corepack enable
-      - run: corepack prepare
-
       - run: yarn
 
       - run: npx tsc
@@ -44,9 +41,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: yarn
-
-      - run: corepack enable
-      - run: corepack prepare
 
       - run: yarn
 
