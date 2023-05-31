@@ -3349,11 +3349,11 @@ __metadata:
   linkType: hard
 
 "rollup-plugin-node-externals@npm:^5.1.2":
-  version: 5.1.2
-  resolution: "rollup-plugin-node-externals@npm:5.1.2"
+  version: 5.1.3
+  resolution: "rollup-plugin-node-externals@npm:5.1.3"
   peerDependencies:
     rollup: ^2.60.0 || ^3.0.0
-  checksum: 5bad7e81994cfe072723b0a92da17aba3fb330af8ad729825f23a80b2d46b2e088a02738c51b08169ac24817ce24aecbd1849a27e70351c93f35e8f5e18ccdb6
+  checksum: 2278f250501e9586295b4acde1459a040829184fd2b83b3a12c53c8c801b2b729efe2c9741bc057c331e750613b9ab3088c69d6389da565443ebfdf9fcdc91c3
   languageName: node
   linkType: hard
 
@@ -3374,8 +3374,8 @@ __metadata:
   linkType: hard
 
 "rollup@npm:^3.20.7":
-  version: 3.21.2
-  resolution: "rollup@npm:3.21.2"
+  version: 3.23.0
+  resolution: "rollup@npm:3.23.0"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -3383,7 +3383,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 1a0261b551ea7846f4ef7514930263c28c67e356ab1cbbe9e69e923a081b571fb483576ea53b69e851df9e58be36ab135057d21635d8bbdb5e63c3ccc34a0419
+  checksum: 0721065cf725c5611815be61d2b01f20b4d0027e17035f6e76384d38396b56cf6ed21a3db78eb004d9db4d24c8a6a19da4563b4ff96b5dd36f0a0f7a3baf85e8
   languageName: node
   linkType: hard
 
