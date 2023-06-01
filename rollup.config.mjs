@@ -1,9 +1,11 @@
-const typescript = require('rollup-plugin-typescript2');
-const { externals } = require('rollup-plugin-node-externals');
+import fs from 'node:fs';
 
-const pkg = require('./package.json');
+import { externals } from 'rollup-plugin-node-externals';
+import typescript from 'rollup-plugin-typescript2';
 
-module.exports = {
+const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
+
+export default {
   input: './src/index.ts',
   plugins: [
     externals(),
