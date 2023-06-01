@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+
 import { externals } from 'rollup-plugin-node-externals';
 import typescript from 'rollup-plugin-typescript2';
 
