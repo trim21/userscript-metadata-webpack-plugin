@@ -3947,9 +3947,9 @@ __metadata:
   linkType: hard
 
 "userscript-metadata-generator@npm:^0.2.3":
-  version: 0.2.3
-  resolution: "userscript-metadata-generator@npm:0.2.3"
-  checksum: 786df56c53341596a4619a6bbcb290be3c16dd300b7eae803a75244dcf352317497cadc9c046650978530b3d72153fdf2c824b2bb10d66546c28f0742df1b2c6
+  version: 0.2.4
+  resolution: "userscript-metadata-generator@npm:0.2.4"
+  checksum: 583ddfb2d1c360dfbf548464b680e003cdafa84287347d6a2d80ea27a3fb93d1182c0c2dda42360c81530cacd3f41318fed9e5a02b97a828e536a21ee2c4b456
   languageName: node
   linkType: hard
 
