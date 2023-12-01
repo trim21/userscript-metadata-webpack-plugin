@@ -366,13 +366,13 @@ __metadata:
   linkType: hard
 
 "@types/webpack-sources@npm:^3.2.0":
-  version: 3.2.2
-  resolution: "@types/webpack-sources@npm:3.2.2"
+  version: 3.2.3
+  resolution: "@types/webpack-sources@npm:3.2.3"
   dependencies:
     "@types/node": "npm:*"
     "@types/source-list-map": "npm:*"
     source-map: "npm:^0.7.3"
-  checksum: 4c7a0bfdaa7c8dbed505c1de5bb3cc4a3d7a2f00f982948bc2f1795d46920465d412d62f8fc344a09b78a2c47a2782aad525b651be4018ae40be0f31748dfaf5
+  checksum: 74e9dfdd38bc345ce99442f3be5b5ad1efc7af5890304175c141717a7c0b38c152e6f7fe1d2875fc19aaa68964019ff4661678eba7fdeee8c3ad42dc6dbf6b62
   languageName: node
   linkType: hard
 
