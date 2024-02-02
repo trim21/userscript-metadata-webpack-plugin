@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 
-import { externals } from 'rollup-plugin-node-externals';
+import { nodeExternals } from 'rollup-plugin-node-externals';
 import typescript from 'rollup-plugin-typescript2';
 
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
@@ -8,7 +8,7 @@ const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 export default {
   input: './src/index.ts',
   plugins: [
-    externals(),
+    nodeExternals(),
     typescript({
       tsconfig: 'tsconfig.json',
       // useTsconfigDeclarationDir: true,
