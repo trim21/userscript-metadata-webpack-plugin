@@ -3538,12 +3538,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-node-externals@npm:^6.0.0":
-  version: 6.1.2
-  resolution: "rollup-plugin-node-externals@npm:6.1.2"
+"rollup-plugin-node-externals@npm:^7.0.0":
+  version: 7.0.1
+  resolution: "rollup-plugin-node-externals@npm:7.0.1"
   peerDependencies:
     rollup: ^3.0.0 || ^4.0.0
-  checksum: 10c0/69482117b33fae4c197905f0bfcba6c472e78c97db1dd171603e1dd208265259d22f9a8157e22c8e9fff384fc881c07c76a4a0bd4ce34e811d8507a29f9cb253
+  checksum: 10c0/c80ee6ada97e34ebad0c917dc631a8cdd420816cf1ef814520e1453eb8ab9d20a574ffeea966e53ab0bb8ccdbf68fe6808fa606873fb4b70a025e54ede7c7826
   languageName: node
   linkType: hard
 
@@ -4302,7 +4302,7 @@ __metadata:
     lint-staged: "npm:^15.0.0"
     prettier: "npm:^3.0.0"
     rollup: "npm:^4.0.0"
-    rollup-plugin-node-externals: "npm:^6.0.0"
+    rollup-plugin-node-externals: "npm:^7.0.0"
     rollup-plugin-typescript2: "npm:^0.36.0"
     typescript: "npm:^5.0.4"
     userscript-metadata-generator: "npm:^0.2.3"
