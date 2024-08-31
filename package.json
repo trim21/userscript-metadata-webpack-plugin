@@ -27,7 +27,7 @@
     "endOfLine": "lf",
     "semi": true
   },
-  "packageManager": "yarn@4.3.1",
+  "packageManager": "yarn@4.4.1",
   "scripts": {
     "format": "prettier --list-different -w ./",
     "prepublishOnly": "npm run build",
