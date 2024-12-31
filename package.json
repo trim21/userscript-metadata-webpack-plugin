@@ -77,7 +77,7 @@
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.0.4",
     "webpack": "^5.27.0",
-    "webpack-cli": "^5.0.2"
+    "webpack-cli": "^6.0.0"
   },
   "dependencies": {
     "userscript-metadata-generator": "^0.2.3"
