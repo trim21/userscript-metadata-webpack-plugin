@@ -1,7 +1,7 @@
-import type { Compiler } from 'webpack';
-import { ModuleFilenameHelpers, Compilation, sources } from 'webpack';
-import { userscriptMetadataGenerator } from 'userscript-metadata-generator';
 import type { Metadata } from 'userscript-metadata-generator';
+import { userscriptMetadataGenerator } from 'userscript-metadata-generator';
+import type { Compiler } from 'webpack';
+import { Compilation, ModuleFilenameHelpers, sources } from 'webpack';
 
 export type { Metadata } from 'userscript-metadata-generator';
 
@@ -11,8 +11,8 @@ export class UserScriptMetaDataPlugin {
 
   /**
    * Plugin to prepend UserScript Metadata.
-   * @param metadata metadata object, required
-   * @param test file pattern, default `/\.user\.js$/`
+   * @param metadata - metadata object, required
+   * @param test - file pattern, default `/\.user\.js$/`
    */
   constructor({ metadata, test = /\.user\.js$/ }: { metadata: Metadata; test?: string | RegExp }) {
     if (metadata === undefined) {
@@ -38,13 +38,13 @@ export class UserScriptMetaDataPlugin {
           stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
         },
         () => {
-          compilation.chunks.forEach((chunk) => {
-            chunk.files.forEach((file) => {
+          for (const chunk of compilation.chunks) {
+            for (const file of chunk.files) {
               if (ModuleFilenameHelpers.matchObject(tester, file)) {
                 compilation.updateAsset(file, (old) => new sources.ConcatSource(this.header, old));
               }
-            });
-          });
+            }
+          }
         },
       );
     });
