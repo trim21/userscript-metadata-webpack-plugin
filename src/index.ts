@@ -35,7 +35,7 @@ export class UserScriptMetaDataPlugin {
       compilation.hooks.processAssets.tap(
         {
           name: 'UserScriptMetaDataPlugin',
-          stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
+          stage: Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE,
         },
         () => {
           for (const chunk of compilation.chunks) {

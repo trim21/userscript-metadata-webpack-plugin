@@ -1,6 +1,6 @@
 const path = require('path');
 
-const UserScriptMetaDataPlugin = require('../');
+const { UserScriptMetaDataPlugin } = require('../');
 const metadata = require('./metadata');
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     extensions: ['.js', '.ts'],
   },
   optimization: {
-    minimize: false,
+    minimize: true,
     moduleIds: 'deterministic',
   },
   output: {
