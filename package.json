@@ -61,9 +61,9 @@
   "devDependencies": {
     "@eslint/js": "9.39.1",
     "@types/webpack-sources": "^3.2.0",
-    "@typescript-eslint/eslint-plugin": "8.47.0",
-    "@typescript-eslint/parser": "8.47.0",
-    "@typescript-eslint/utils": "8.47.0",
+    "@typescript-eslint/eslint-plugin": "8.48.1",
+    "@typescript-eslint/parser": "8.48.1",
+    "@typescript-eslint/utils": "8.48.1",
     "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-erasable-syntax-only": "0.4.0",
@@ -80,7 +80,7 @@
     "rollup-plugin-node-externals": "^8.0.0",
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.0.4",
-    "typescript-eslint": "8.47.0",
+    "typescript-eslint": "8.48.1",
     "webpack": "^5.27.0",
     "webpack-cli": "^6.0.0"
   },
