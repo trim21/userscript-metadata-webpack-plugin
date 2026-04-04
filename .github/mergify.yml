@@ -6,3 +6,18 @@ pull_request_rules:
       label:
         toggle:
           - conflict
+
+  - name: Automatic merge on approval
+    conditions:
+      - '#commits-behind=0'
+      - or:
+          - '#approved-reviews-by>=1'
+          - label=ci:auto-merge
+      - or:
+          - '- head*=renovate/lockfile-maintenance-*'
+          - 'created-at<=24h ago'
+      - base=master
+      - check-success=check
+    actions:
+      queue:
+        name: renovate

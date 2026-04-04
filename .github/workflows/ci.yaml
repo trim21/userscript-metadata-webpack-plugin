@@ -8,6 +8,14 @@ on:
   pull_request:
 
 jobs:
+  check:
+    runs-on: ubuntu-slim
+    needs:
+      - build
+      - lint
+    steps:
+      - run: 'echo 1'
+
   build:
     runs-on: ubuntu-latest
     strategy:
