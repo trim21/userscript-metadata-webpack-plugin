@@ -9,7 +9,6 @@ pull_request_rules:
 
   - name: Automatic merge on approval
     conditions:
-      - '#commits-behind=0'
       - or:
           - '#approved-reviews-by>=1'
           - label=ci:auto-merge
