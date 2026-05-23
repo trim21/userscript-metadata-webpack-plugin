@@ -2483,12 +2483,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-node-externals@npm:^8.0.0":
-  version: 8.1.2
-  resolution: "rollup-plugin-node-externals@npm:8.1.2"
+"rollup-plugin-node-externals@npm:^9.0.0":
+  version: 9.0.1
+  resolution: "rollup-plugin-node-externals@npm:9.0.1"
   peerDependencies:
     rollup: ^4.0.0
-  checksum: 10c0/ea37fb84e562c311b473f354e7ff98f8d19caf7c57b526ef6a29f1fab05880d291d2edd3c482dfedd27150a4133ebe914723ac9dc3165ce679ec00146a97df06
+    vite: ">=5.0.0"
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+    vite:
+      optional: true
+  checksum: 10c0/0d57f267cf7356aecd3ec08fa031cccfb4e621b1d0f83216240bcf647ab439b083340a1d927bb8dab3a20fe21b47fd4929a99086bfb3d08c7ad740f191d3bf9d
   languageName: node
   linkType: hard
 
@@ -2988,7 +2994,7 @@ __metadata:
     prettier: "npm:^3.0.0"
     rimraf: "npm:^6.0.1"
     rollup: "npm:^4.0.0"
-    rollup-plugin-node-externals: "npm:^8.0.0"
+    rollup-plugin-node-externals: "npm:^9.0.0"
     rollup-plugin-typescript2: "npm:^0.37.0"
     typescript: "npm:^6.0.0"
     typescript-eslint: "npm:8.59.1"
