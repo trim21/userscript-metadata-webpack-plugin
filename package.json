@@ -78,7 +78,7 @@
     "prettier": "^3.0.0",
     "rimraf": "^6.0.1",
     "rollup": "^4.0.0",
-    "rollup-plugin-node-externals": "^8.0.0",
+    "rollup-plugin-node-externals": "^9.0.0",
     "rollup-plugin-typescript2": "^0.37.0",
     "typescript": "^6.0.0",
     "typescript-eslint": "8.60.1",
