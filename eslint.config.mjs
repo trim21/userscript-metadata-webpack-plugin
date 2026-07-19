@@ -48,6 +48,7 @@ export default tsEslint.config(
   {
     rules: {
       '@typescript-eslint/restrict-template-expressions': 'off',
+      'unicorn/consistent-compound-words': 'off',
       'unicorn/import-style': 'off',
       'unused-imports/no-unused-imports': 'error',
       curly: ['error'],
