@@ -1286,9 +1286,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unicorn@npm:75.0.0":
-  version: 75.0.0
-  resolution: "eslint-plugin-unicorn@npm:75.0.0"
+"eslint-plugin-unicorn@npm:76.0.0":
+  version: 76.0.0
+  resolution: "eslint-plugin-unicorn@npm:76.0.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.10.1"
     "@eslint/css-tree": "npm:^4.0.5"
@@ -1312,7 +1312,7 @@ __metadata:
     yaml: "npm:^2.9.0"
   peerDependencies:
     eslint: ">=10.4"
-  checksum: 10c0/5c10f481da9a3f09494d386569a5b7a863dc9ff9862607ea07f6380c86c58390c80b4be1af52fc9e70d6ebd411b8a311f16ce0eea2612a858b263e3f2c1b60a1
+  checksum: 10c0/0f59e801826e79cd79da4bec07cd6213f58ffc5a11e21e16ba0a9027da4ef2bbda790c7ca26804310171b5eab478040bb270d0c1f3e4e538f83186a5f621e8e0
   languageName: node
   linkType: hard
 
@@ -2793,7 +2793,7 @@ __metadata:
     eslint-plugin-promise: "npm:7.3.0"
     eslint-plugin-simple-import-sort: "npm:14.0.0"
     eslint-plugin-tsdoc: "npm:0.5.4"
-    eslint-plugin-unicorn: "npm:75.0.0"
+    eslint-plugin-unicorn: "npm:76.0.0"
     eslint-plugin-unused-imports: "npm:4.4.1"
     husky: "npm:^9.0.0"
     lint-staged: "npm:^17.0.0"
