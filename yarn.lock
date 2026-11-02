@@ -81,7 +81,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/css-tree@npm:^4.0.5":
+"@eslint/css-tree@npm:^4.1.1":
   version: 4.1.2
   resolution: "@eslint/css-tree@npm:4.1.2"
   dependencies:
@@ -975,12 +975,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"baseline-browser-mapping@npm:^2.11.29":
-  version: 2.11.30
-  resolution: "baseline-browser-mapping@npm:2.11.30"
+"baseline-browser-mapping@npm:^2.11.33":
+  version: 2.11.34
+  resolution: "baseline-browser-mapping@npm:2.11.34"
   bin:
     baseline-browser-mapping: dist/cli.cjs
-  checksum: 10c0/9c10835aa587c66d2f017b89c1f99ac851fa18b3bd8b767891c430ee8313b5b8ed6cbfe724d6684c10c2db1345f1e1a0dd40301cea20fcc8309a77e1cb10c4cb
+  checksum: 10c0/294a4513440f4cacca2d84032ccff2dd284b429356af0c12574360d1e471ad1ab2383b101261193bec87891f90d2fea29cb75d3e54b2b69a060c6e726c433c58
   languageName: node
   linkType: hard
 
@@ -993,18 +993,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.28.1, browserslist@npm:^4.28.8, browserslist@npm:^4.29.3":
-  version: 4.29.4
-  resolution: "browserslist@npm:4.29.4"
+"browserslist@npm:^4.28.1, browserslist@npm:^4.29.1, browserslist@npm:^4.29.3":
+  version: 4.29.5
+  resolution: "browserslist@npm:4.29.5"
   dependencies:
-    baseline-browser-mapping: "npm:^2.11.29"
-    caniuse-lite: "npm:^1.0.30001816"
-    electron-to-chromium: "npm:^1.5.459"
-    node-releases: "npm:^2.0.59"
+    baseline-browser-mapping: "npm:^2.11.33"
+    caniuse-lite: "npm:^1.0.30001819"
+    electron-to-chromium: "npm:^1.5.464"
+    node-releases: "npm:^2.0.60"
     update-browserslist-db: "npm:^1.3.4"
   bin:
     browserslist: cli.js
-  checksum: 10c0/e706dfb56f89a78a3b5fef681d9793327779f5d30885606e49c4af788a7f60b92dd8c2ead153d780109e8fcc2529a784491854037b18c8b8700fb464b87f9f93
+  checksum: 10c0/a27b0d1dece626af14cad3e0eca07fc17608b4d306a15cf2b2c5dcb30cadcc118d3da7400866287587feb3531ad8907cffc6592d21198269960a0d381f8349bd
   languageName: node
   linkType: hard
 
@@ -1042,10 +1042,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001816":
-  version: 1.0.30001818
-  resolution: "caniuse-lite@npm:1.0.30001818"
-  checksum: 10c0/b58d75c0e040eadbbd1bf525a6f4cb36edc4be8e2f0123f4cbcf965070a010e4e96ec7e9d61ea8e9073dee58a04c10d6091f99c294756e617e4307a90552b833
+"caniuse-lite@npm:^1.0.30001819":
+  version: 1.0.30001820
+  resolution: "caniuse-lite@npm:1.0.30001820"
+  checksum: 10c0/b7752a246ba6b0d4a1cbede0d9beda1790ec5bd1d9270bc61d2c42e19f427cf79ba79cf3e0ae85fa80ef7cfe7fcfd8a3db41e0e3be6db94586379f4d595956d8
   languageName: node
   linkType: hard
 
@@ -1155,10 +1155,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-to-chromium@npm:^1.5.459":
-  version: 1.5.463
-  resolution: "electron-to-chromium@npm:1.5.463"
-  checksum: 10c0/03b594525895a1a93eb399d632b7193c6f9780c10e35331d23896f5f97b584d6a6983b401ad26db75334c55c912f2b63c82c8ac50747787298263ee84bcec506
+"electron-to-chromium@npm:^1.5.464":
+  version: 1.5.472
+  resolution: "electron-to-chromium@npm:1.5.472"
+  checksum: 10c0/7adccd4bde3776afc0a0a883f4cac736d69d7ab5e365a931373e7b46a6e497e44eb5fb4a14fc2af430f3cfe34348463ef15cccb538d6a09807221c07bfbcbda8
   languageName: node
   linkType: hard
 
@@ -1172,7 +1172,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^8.0.0":
+"entities@npm:^8.1.0":
   version: 8.1.0
   resolution: "entities@npm:8.1.0"
   checksum: 10c0/da0bf22912c19d2a4707783e1b905d3f6a977e93e0655a8d2c526455eb3996f668f9f2e4c2a07af8d6927d232c41b6e929a7044df0236c7bf6e9c38e070e3719
@@ -1284,33 +1284,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unicorn@npm:76.0.0":
-  version: 76.0.0
-  resolution: "eslint-plugin-unicorn@npm:76.0.0"
+"eslint-plugin-unicorn@npm:77.0.0":
+  version: 77.0.0
+  resolution: "eslint-plugin-unicorn@npm:77.0.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.10.1"
-    "@eslint/css-tree": "npm:^4.0.5"
-    browserslist: "npm:^4.28.8"
+    "@eslint/css-tree": "npm:^4.1.1"
+    browserslist: "npm:^4.29.1"
     change-case: "npm:^5.4.4"
     ci-info: "npm:^4.4.0"
     core-js-compat: "npm:^3.50.0"
     detect-indent: "npm:^7.0.2"
-    entities: "npm:^8.0.0"
+    entities: "npm:^8.1.0"
     find-up-simple: "npm:^1.0.1"
-    globals: "npm:^17.11.0"
+    globals: "npm:^17.12.0"
     identifier-regex: "npm:^1.1.0"
     indent-string: "npm:^5.0.0"
     is-builtin-module: "npm:^5.0.0"
     pluralize: "npm:^8.0.0"
     quote-js-string: "npm:^0.1.0"
-    regjsparser: "npm:^0.13.2"
+    regjsparser: "npm:^0.13.3"
     reserved-identifiers: "npm:^1.2.0"
     semver: "npm:^7.8.5"
     strip-indent: "npm:^4.1.1"
-    yaml: "npm:^2.9.0"
+    yaml: "npm:^2.9.1"
   peerDependencies:
     eslint: ">=10.4"
-  checksum: 10c0/0f59e801826e79cd79da4bec07cd6213f58ffc5a11e21e16ba0a9027da4ef2bbda790c7ca26804310171b5eab478040bb270d0c1f3e4e538f83186a5f621e8e0
+  checksum: 10c0/faa5c25d5a9917d6f96352dd41bb38eaf60f7c71bb4523976aaeed6cf6759301f64691ad46fb3d0b8bf6c596b6729a0842c8bba59b0b0a7e7ecc9d870f4a7e13
   languageName: node
   linkType: hard
 
@@ -1633,10 +1633,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^17.11.0":
-  version: 17.13.0
-  resolution: "globals@npm:17.13.0"
-  checksum: 10c0/8371d9e4e5581640141b5cce70a098edd765d2e3ab063b14998e590698071e0afb4a4a6739ccfbdcbdeb2565c5553697ba07d95703c51039912cf341a7dba7a7
+"globals@npm:^17.12.0":
+  version: 17.14.0
+  resolution: "globals@npm:17.14.0"
+  checksum: 10c0/422d17c24e87170d4aa566b97a53339ae451c2f4d78512594a7ca951cdb939bc4a85c10071e6dcf77ca63de48713a77f2e71eb9214e44880233dff2090e92731
   languageName: node
   linkType: hard
 
@@ -2068,10 +2068,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-releases@npm:^2.0.59":
-  version: 2.0.59
-  resolution: "node-releases@npm:2.0.59"
-  checksum: 10c0/c7fdc6c55b7e5c5fccd6274edf8afc7ab1320d7c01353cde8e60653cfd9488d4d0a5224bb4efd6d77877338f26976ae9dbcf6fb0fad75a37f37b9c22f71c9796
+"node-releases@npm:^2.0.60":
+  version: 2.0.63
+  resolution: "node-releases@npm:2.0.63"
+  checksum: 10c0/857ce981b26449a6f369d72f3c9c6d82aa7255a7b16a50ff7bd8ab1baea3754e24a8f9fbbdf9ccf05e97d9525d8ebfb7430b5fd822bc530656b84d70a6660e21
   languageName: node
   linkType: hard
 
@@ -2271,7 +2271,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regjsparser@npm:^0.13.2":
+"regjsparser@npm:^0.13.3":
   version: 0.13.4
   resolution: "regjsparser@npm:0.13.4"
   dependencies:
@@ -2764,7 +2764,7 @@ __metadata:
     eslint-plugin-promise: "npm:7.3.0"
     eslint-plugin-simple-import-sort: "npm:14.0.0"
     eslint-plugin-tsdoc: "npm:0.5.4"
-    eslint-plugin-unicorn: "npm:76.0.0"
+    eslint-plugin-unicorn: "npm:77.0.0"
     eslint-plugin-unused-imports: "npm:4.4.1"
     husky: "npm:^9.0.0"
     lint-staged: "npm:^17.0.0"
@@ -2920,7 +2920,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.9.0, yaml@npm:^2.9.1":
+"yaml@npm:^2.9.1":
   version: 2.9.1
   resolution: "yaml@npm:2.9.1"
   bin:
