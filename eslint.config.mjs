@@ -50,6 +50,7 @@ export default tsEslint.config(
       '@typescript-eslint/restrict-template-expressions': 'off',
       'unicorn/consistent-compound-words': 'off',
       'unicorn/import-style': 'off',
+      'unicorn/no-asterisk-prefix-in-documentation-comments': 'off',
       'unused-imports/no-unused-imports': 'error',
       curly: ['error'],
       'tsdoc/syntax': 'error',
